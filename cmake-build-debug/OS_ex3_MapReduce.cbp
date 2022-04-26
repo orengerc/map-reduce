@@ -88,7 +88,13 @@
 		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/Barrier.h">
 			<Option target="OS_ex3_MapReduce"/>
 		</Unit>
-		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/barrierdemo.cpp">
+		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/MapReduceFramework.cpp">
+			<Option target="OS_ex3_MapReduce"/>
+		</Unit>
+		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/MapReduceFramework.h">
+			<Option target="OS_ex3_MapReduce"/>
+		</Unit>
+		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/SampleClient.cpp">
 			<Option target="OS_ex3_MapReduce"/>
 		</Unit>
 		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/CMakeLists.txt">

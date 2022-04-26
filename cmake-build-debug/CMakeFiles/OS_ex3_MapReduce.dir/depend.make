@@ -4,6 +4,12 @@
 CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.o: \
  ../Barrier.cpp \
  ../Barrier.h
-CMakeFiles/OS_ex3_MapReduce.dir/barrierdemo.cpp.o: \
+CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.o: \
  ../Barrier.h \
- ../barrierdemo.cpp
+ ../MapReduceClient.h \
+ ../MapReduceFramework.cpp \
+ ../MapReduceFramework.h
+CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.o: \
+ ../MapReduceClient.h \
+ ../MapReduceFramework.h \
+ ../SampleClient.cpp

@@ -153,29 +153,53 @@ Barrier.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.s
 .PHONY : Barrier.cpp.s
 
-barrierdemo.o: barrierdemo.cpp.o
-.PHONY : barrierdemo.o
+MapReduceFramework.o: MapReduceFramework.cpp.o
+.PHONY : MapReduceFramework.o
 
 # target to build an object file
-barrierdemo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/barrierdemo.cpp.o
-.PHONY : barrierdemo.cpp.o
+MapReduceFramework.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.o
+.PHONY : MapReduceFramework.cpp.o
 
-barrierdemo.i: barrierdemo.cpp.i
-.PHONY : barrierdemo.i
+MapReduceFramework.i: MapReduceFramework.cpp.i
+.PHONY : MapReduceFramework.i
 
 # target to preprocess a source file
-barrierdemo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/barrierdemo.cpp.i
-.PHONY : barrierdemo.cpp.i
+MapReduceFramework.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.i
+.PHONY : MapReduceFramework.cpp.i
 
-barrierdemo.s: barrierdemo.cpp.s
-.PHONY : barrierdemo.s
+MapReduceFramework.s: MapReduceFramework.cpp.s
+.PHONY : MapReduceFramework.s
 
 # target to generate assembly for a file
-barrierdemo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/barrierdemo.cpp.s
-.PHONY : barrierdemo.cpp.s
+MapReduceFramework.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.s
+.PHONY : MapReduceFramework.cpp.s
+
+SampleClient.o: SampleClient.cpp.o
+.PHONY : SampleClient.o
+
+# target to build an object file
+SampleClient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.o
+.PHONY : SampleClient.cpp.o
+
+SampleClient.i: SampleClient.cpp.i
+.PHONY : SampleClient.i
+
+# target to preprocess a source file
+SampleClient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.i
+.PHONY : SampleClient.cpp.i
+
+SampleClient.s: SampleClient.cpp.s
+.PHONY : SampleClient.s
+
+# target to generate assembly for a file
+SampleClient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.s
+.PHONY : SampleClient.cpp.s
 
 # Help Target
 help:
@@ -189,9 +213,12 @@ help:
 	@echo "... Barrier.o"
 	@echo "... Barrier.i"
 	@echo "... Barrier.s"
-	@echo "... barrierdemo.o"
-	@echo "... barrierdemo.i"
-	@echo "... barrierdemo.s"
+	@echo "... MapReduceFramework.o"
+	@echo "... MapReduceFramework.i"
+	@echo "... MapReduceFramework.s"
+	@echo "... SampleClient.o"
+	@echo "... SampleClient.i"
+	@echo "... SampleClient.s"
 .PHONY : help
 
 
