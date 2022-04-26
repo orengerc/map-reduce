@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/OS_ex3_MapReduce.dir/main.cpp.o"
+  "CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.o"
+  "CMakeFiles/OS_ex3_MapReduce.dir/barrierdemo.cpp.o"
   "OS_ex3_MapReduce"
   "OS_ex3_MapReduce.pdb"
 )

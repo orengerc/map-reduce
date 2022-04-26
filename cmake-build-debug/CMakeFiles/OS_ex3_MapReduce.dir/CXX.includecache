@@ -6,7 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/main.cpp
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/Barrier.cpp
+Barrier.h
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/Barrier.h
+cstdlib
+-
+cstdio
+-
 iostream
+-
+
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/Barrier.h
+pthread.h
+-
+
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/barrierdemo.cpp
+Barrier.h
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/Barrier.h
+pthread.h
+-
+cstdio
 -
 

@@ -129,29 +129,53 @@ OS_ex3_MapReduce/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/build
 .PHONY : OS_ex3_MapReduce/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+Barrier.o: Barrier.cpp.o
+.PHONY : Barrier.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/main.cpp.o
-.PHONY : main.cpp.o
+Barrier.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.o
+.PHONY : Barrier.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+Barrier.i: Barrier.cpp.i
+.PHONY : Barrier.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/main.cpp.i
-.PHONY : main.cpp.i
+Barrier.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.i
+.PHONY : Barrier.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+Barrier.s: Barrier.cpp.s
+.PHONY : Barrier.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/main.cpp.s
-.PHONY : main.cpp.s
+Barrier.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.s
+.PHONY : Barrier.cpp.s
+
+barrierdemo.o: barrierdemo.cpp.o
+.PHONY : barrierdemo.o
+
+# target to build an object file
+barrierdemo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/barrierdemo.cpp.o
+.PHONY : barrierdemo.cpp.o
+
+barrierdemo.i: barrierdemo.cpp.i
+.PHONY : barrierdemo.i
+
+# target to preprocess a source file
+barrierdemo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/barrierdemo.cpp.i
+.PHONY : barrierdemo.cpp.i
+
+barrierdemo.s: barrierdemo.cpp.s
+.PHONY : barrierdemo.s
+
+# target to generate assembly for a file
+barrierdemo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/barrierdemo.cpp.s
+.PHONY : barrierdemo.cpp.s
 
 # Help Target
 help:
@@ -162,9 +186,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... OS_ex3_MapReduce"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Barrier.o"
+	@echo "... Barrier.i"
+	@echo "... Barrier.s"
+	@echo "... barrierdemo.o"
+	@echo "... barrierdemo.i"
+	@echo "... barrierdemo.s"
 .PHONY : help
 
 

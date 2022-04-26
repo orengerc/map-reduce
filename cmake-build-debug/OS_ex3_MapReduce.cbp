@@ -82,7 +82,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/main.cpp">
+		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/Barrier.cpp">
+			<Option target="OS_ex3_MapReduce"/>
+		</Unit>
+		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/Barrier.h">
+			<Option target="OS_ex3_MapReduce"/>
+		</Unit>
+		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/barrierdemo.cpp">
 			<Option target="OS_ex3_MapReduce"/>
 		</Unit>
 		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/CMakeLists.txt">
