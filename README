@@ -1,0 +1,46 @@
+oren_gerc,nitaiseri
+Oren Gercenshtein (316120203), Nitai Seri (311525505)
+EX: 2
+
+FILES:
+README - this file.
+Makefile - contains the recipe for building the program.
+uthreads.cpp - implements the uthreads library.
+
+REMARKS:
+
+ANSWERS:
+1) User-level threads are small and much faster than kernel level threads. If we want to implement a system that doesn't
+    do alot of I/O operations, but has many different mechanisms running at the same time with the same resources,
+     we would want to use user-level-threading.
+   
+2) The advantages: - while each process has its own memory and a whole cpu for himself it can run much faster when it is
+                    his turn on the cpu.
+                   - can be good if one tab crush it will not force crushing on other tabs.
+   The disadvantages: - cannot share information between tabs easily.
+                       - demand more memory since each tab as a process have its own scope of memory.
+
+
+3) a. done
+   b. done
+   c. the interrupt that sent is by syscall. If we didnt add any flag then the Default  TERM signal will be send.
+   we put it in by the keyboard into the shell .and then the signal will be send and it is the responsibility of the OS
+    to handle it. to check if its a legal command and then execute it if so.  the interrupt accept by the cpu
+    and it wil stop the process and call the OS to handle it in kernel mode.  depends on the interrupt the OS
+    get the relevant function from the function vectors of the OS , unless it is masked or replaced by another handler.
+
+4) The process running time is measured by the Virtual Timer and measure how much time the process actually run.
+And the real time is the actually time that have been pass while it run and meanwhile and between.
+for example we can measure 5 sec of a process running in virtual time, but it wasnt sequencly and may
+inhterrupt by running of other processes so in may run in real time  10 sec but 5 sec actually on the cpu
+(and this measure by virtual time).
+
+5) The sigsetjmp() function saves the environment of the calling thread in its sigjmp_buf env_ argument. If the value of
+ the savemask argument is not 0, sigsetjmp will also save the current signal mask of the calling thread as part of the
+  calling environment. sigsetjmp() returns 0 when successful, or thread number if the return is from a call to
+  siglongjmp().
+The siglongjmp() function restores the environment saved by the most recent invocation of sigsetjmp() in the same
+ thread, with the corresponding sigjmp_buf argument. After siglongjmp() is completed, program execution continues as if
+  the corresponding invocation of sigsetjmp() had just returned the value specified by the argument val.
+
+
