@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/OS_ex3_MapReduce.dir/main.cpp.o -o OS_ex3_MapReduce 

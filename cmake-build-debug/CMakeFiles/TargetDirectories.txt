@@ -1,0 +1,3 @@
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/OS_ex3_MapReduce.dir
