@@ -22,6 +22,7 @@ public:
     const MapReduceClient* client;
     const InputVec inputVec;
     OutputVec outputVec;
+    std::vector<IntermediateVec> shuffled;
     int nThreads;
 
     pthread_t* threads;
@@ -53,39 +54,82 @@ void abort(JobHandle job, const std::string& err){
     exit(EXIT_FAILURE);
 }
 
-/**
- *
- * COME BACK TO BITWISE OPERATIONS
- *
- * */
-void init_atomic_counter(){
-
+uint64_t getBits(uint64_t n, uint64_t k, uint64_t p){
+    return (((1 << k) - 1) & (n >> (p - 1)));
 }
-uint64_t inc_atomic_counter(){
-    auto old_value = (job->atomic_counter)++;
+
+uint64_t setMiddleBits(uint64_t n, uint64_t m){
+    return (n & 0xC00000007FFFFFFF) | (m << 31);
+}
+
+uint64_t setRightBits(uint64_t n, uint64_t m){
+    return (n & 0xFFFFFFFF80000000) | m;
+}
+
+uint64_t incStartCounter(){
+    auto old_value = job->atomic_counter.load();
+
+    //add to middle part
+    job->atomic_counter = setMiddleBits(old_value, getBits(old_value, 31, 31) + 1);
+
     return old_value;
 }
-stage_t getStage(uint64_t atomic_counter){
 
+uint64_t incFinishCounter(){
+    auto old_value = job->atomic_counter.load();
+
+    //add to right part
+    job->atomic_counter = setRightBits(old_value, getBits(old_value, 31, 0) + 1);
+
+    return old_value;
 }
-stage_t getPercent(uint64_t atomic_counter){
 
+void resetAtomicCounter(stage_t stage){
+    job->atomic_counter = static_cast<uint64_t>(stage) << 62;
+}
+
+stage_t getStage(){
+    return static_cast<stage_t>((job->atomic_counter.load() & 0xC000000000000000) >> 62);
+}
+
+float getPercent(){
+    uint64_t num = getBits(job->atomic_counter.load(), 31, 31);
+    float percent;
+    switch (getStage()) {
+        case MAP_STAGE:
+            percent = (float)num/(float)job->inputVec.size();
+            break;
+        case SHUFFLE_STAGE:
+            percent = (float)num/(float)job->nThreads;
+            break;
+        case REDUCE_STAGE:
+            percent = (float)num/(float)job->shuffled.size();
+            break;
+        case UNDEFINED_STAGE:
+            percent = 0.f;
+            break;
+    }
+    return percent * 100;
 }
 
 void emit2 (K2* key, V2* value, void* context){
     auto* tc = (ThreadContext*) context;
     tc->vec.emplace_back(std::make_pair(key, value));
+    incFinishCounter();
 }
 
-void emit3 (K3* key, V3* value, void* context){}
+void emit3 (K3* key, V3* value, void* context){
+    job->outputVec.emplace_back(key, value);
+    incFinishCounter();
+}
 
 void map(ThreadContext* tc){
-    auto old_value = inc_atomic_counter();
+    auto old_value = incStartCounter();
     while(old_value < job->inputVec.size()){
         auto k = std::get<0>(job->inputVec[old_value]);
         auto v = std::get<1>(job->inputVec[old_value]);
         job->client->map(k, v, tc);
-        old_value = inc_atomic_counter();
+        old_value = incStartCounter();
     }
 }
 
@@ -99,12 +143,56 @@ void sort(ThreadContext* tc){
     }
 }
 
-void shuffle(ThreadContext* tc){
+int getMaxIndex(){
+    int max_index = -1;
+    for(int i=0;i<job->nThreads;++i){
+        if(!job->contexts[i].vec.empty()){
+            if((max_index == -1) || (job->contexts[max_index].vec[0].first < job->contexts[i].vec[0].first)){
+                max_index=i;
+            }
+        }
+    }
+    return max_index;
+}
+
+bool equals(K2* x, K2* y){
+    return (!((*x)<(*y)) && !((*y)<(*x)));
+}
+
+void shuffle(){
+    int max_ind = getMaxIndex();
+    while(max_ind != -1){
+        //if k2 is not in vec, add
+        if(job->shuffled.empty() || !equals(job->contexts[max_ind].vec[0].first, job->shuffled.back()[0].first)){
+            auto v = IntermediateVec();
+            v.emplace_back(job->contexts[max_ind].vec[0]);
+            job->shuffled.emplace_back(v);
+        }
+
+        //otherwise, add to it
+        else{
+            job->shuffled.back().emplace_back(job->contexts[max_ind].vec[0]);
+        }
+
+        //erase elem from job
+        job->contexts[max_ind].vec.erase(job->contexts[max_ind].vec.begin());
+
+        //increment counter
+        incFinishCounter();
+
+        //get next index
+        max_ind = getMaxIndex();
+    }
 
 }
 
 void reduce(ThreadContext* tc){
-
+    auto old_value = incStartCounter();
+    while(old_value < job->shuffled.size()){
+        auto vec = job->shuffled[old_value];
+        job->client->reduce(&vec, tc);
+        old_value = incStartCounter();
+    }
 }
 
 void* run(void* t_cont){
@@ -121,7 +209,9 @@ void* run(void* t_cont){
 
     //shuffle
     if(!tc->threadID){
-        shuffle(tc);
+        resetAtomicCounter(SHUFFLE_STAGE);
+        shuffle();
+        resetAtomicCounter(REDUCE_STAGE);
     }
 
     //2nd barrier
@@ -137,10 +227,10 @@ JobHandle startMapReduceJob(const MapReduceClient& client,
                             const InputVec& inputVec, OutputVec& outputVec,
                             int multiThreadLevel){
     //init job
-    job = new JobContext{&client, inputVec, outputVec, multiThreadLevel, {}, {}, {}, multiThreadLevel, PTHREAD_MUTEX_INITIALIZER};
+    job = new JobContext{&client, inputVec, outputVec, {}, multiThreadLevel, {}, {}, {}, multiThreadLevel, PTHREAD_MUTEX_INITIALIZER};
     if(!job) abort(job, MEM_ERR);
 
-    init_atomic_counter();
+    resetAtomicCounter(MAP_STAGE);
 
     //init thread contexts
     job->contexts = new ThreadContext[job->nThreads];
@@ -178,9 +268,8 @@ void waitForJob(JobHandle job){
 }
 
 void getJobState(JobHandle job, JobState* state){
-    auto handle = static_cast<JobContext*>(job);
-    state->stage = getStage(handle->atomic_counter);
-    state->percentage=getPercent(handle->atomic_counter);
+    state->stage = getStage();
+    state->percentage=getPercent();
 }
 
 void closeJobHandle(JobHandle job){
