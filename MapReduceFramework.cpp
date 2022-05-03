@@ -70,7 +70,7 @@ uint64_t incStartCounter(){
     auto old_value = job->atomic_counter.load();
 
     //add to middle part
-    job->atomic_counter = setMiddleBits(old_value, getBits(old_value, 31, 31) + 1);
+    job->atomic_counter = setMiddleBits(old_value, getBits(old_value, 31, 32) + 1);
 
     return old_value;
 }
@@ -79,17 +79,17 @@ uint64_t incFinishCounter(){
     auto old_value = job->atomic_counter.load();
 
     //add to right part
-    job->atomic_counter = setRightBits(old_value, getBits(old_value, 31, 0) + 1);
+    job->atomic_counter = setRightBits(old_value, ((old_value & 0x7FFFFFFF) + 1));
 
     return old_value;
 }
 
-void resetAtomicCounter(stage_t stage){
+void resetAtomicCounter(int stage){
     job->atomic_counter = static_cast<uint64_t>(stage) << 62;
 }
 
-stage_t getStage(){
-    return static_cast<stage_t>((job->atomic_counter.load() & 0xC000000000000000) >> 62);
+int getStage(){
+    return static_cast<int>((job->atomic_counter.load() & 0xC000000000000000) >> 62);
 }
 
 float getPercent(){

@@ -6,31 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/Barrier.h
-pthread.h
--
-
 /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/MapReduceClient.h
 vector
 -
 utility
 -
 
-/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/MapReduceFramework.cpp
-MapReduceFramework.h
-/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/MapReduceFramework.h
-Barrier.h
-/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/Barrier.h
-vector
--
-iostream
--
-pthread.h
--
-atomic
--
-
 /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/MapReduceFramework.h
 MapReduceClient.h
 /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/MapReduceClient.h
+
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/SampleClient.cpp
+MapReduceFramework.h
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/MapReduceFramework.h
+cstdio
+-
+string
+-
+array
+-
+unistd.h
+-
+iostream
+-
 
