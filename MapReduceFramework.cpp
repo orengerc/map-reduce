@@ -27,7 +27,7 @@ public:
     OutputVec* outputVec;
     std::vector<IntermediateVec> shuffled;
     int nThreads;
-    stage_t curStage= UNDEFINED_STAGE;
+    stage_t curStage= MAP_STAGE;
     bool finished = false;
     std::vector<pthread_t> threads;
     std::vector<ThreadContext*> contexts;
@@ -92,9 +92,7 @@ uint64_t setRightBits(uint64_t n, uint64_t m){
 }
 
 uint64_t incStartCounter(ThreadContext* tc, stage_t stage){
-    uint64_t a = tc->job->counters[stage].first.fetch_add(1);
-    return a;
-//    return job->counters[stage].first.fetch_add(1);
+    return tc->job->counters[stage].first.fetch_add(1);
 }
 
 uint64_t incFinishCounter(ThreadContext* tc, stage_t stage){
@@ -109,13 +107,13 @@ int getStage(JobHandle job){
 float getPercent(JobContext* job){
     uint64_t num = job->counters[job->curStage].second.load();
     float percent;
-    switch (getStage(job)) {
+    switch (job->curStage) {
         case MAP_STAGE:
             percent = (float)num/(float)job->inputVec.size();
             break;
         case SHUFFLE_STAGE:
 
-            percent = (float)num/(float)job->nThreads;
+            percent = (float)num/(float)job->numOfElementsInShuffle;
             break;
         case REDUCE_STAGE:
             percent = (float)num/(float)job->shuffled.size();
@@ -130,13 +128,11 @@ float getPercent(JobContext* job){
 void emit2 (K2* key, V2* value, void* context){
     auto tc = static_cast<ThreadContext*>(context);
     tc->vec.emplace_back(std::make_pair(key, value));
-    incFinishCounter(tc, MAP_STAGE);
 }
 
 void emit3 (K3* key, V3* value, void* context){
     auto tc = static_cast<ThreadContext*>(context);
     tc->job->outputVec->emplace_back(key, value);
-    incFinishCounter(tc, REDUCE_STAGE);
 }
 
 void map(ThreadContext* tc){
@@ -145,6 +141,7 @@ void map(ThreadContext* tc){
         auto k = std::get<0>(tc->job->inputVec[old_value]);
         auto v = std::get<1>(tc->job->inputVec[old_value]);
         tc->job->client->map(k, v, tc);
+        incFinishCounter(tc, MAP_STAGE);
         old_value = incStartCounter(tc, MAP_STAGE);
     }
 }
@@ -208,6 +205,7 @@ void reduce(ThreadContext* tc){
     while(old_value < tc->job->shuffled.size()){
         auto vec = tc->job->shuffled[old_value];
         tc->job->client->reduce(&vec, tc);
+        incFinishCounter(tc, REDUCE_STAGE);
         old_value = incStartCounter(tc, REDUCE_STAGE);
     }
 }
@@ -294,8 +292,9 @@ void waitForJob(JobHandle job){
 }
 
 void getJobState(JobHandle job, JobState* state){
-    state->stage = static_cast<stage_t>(getStage(job));
-    state->percentage=getPercent(static_cast<JobContext*>(job));
+    JobContext* j = static_cast<JobContext*>(job);
+    state->stage = static_cast<stage_t>(j->curStage);
+    state->percentage=getPercent(j);
 }
 
 void closeJobHandle(JobHandle job){
