@@ -35,11 +35,13 @@ public:
     Barrier barrier;
     pthread_mutex_t wait_mutex;
     pthread_mutex_t inc_mutex;
+    pthread_mutex_t output_mutex;
+
     unsigned long numOfElementsInShuffle{};
 
     JobContext(const MapReduceClient* client, InputVec inputVec, OutputVec* outputVec, int nThreads):
                 client(client), inputVec(std::move(inputVec)), outputVec(outputVec), wait_mutex(PTHREAD_MUTEX_INITIALIZER),
-                inc_mutex(PTHREAD_MUTEX_INITIALIZER), nThreads(nThreads), barrier(nThreads) {}
+                inc_mutex(PTHREAD_MUTEX_INITIALIZER), output_mutex(PTHREAD_MUTEX_INITIALIZER), nThreads(nThreads), barrier(nThreads) {}
 
     ~JobContext(){
         if(pthread_mutex_destroy(&wait_mutex)){
@@ -69,7 +71,12 @@ public:
 void calcNumElemInShuffle();
 
 void cleanup(JobHandle job){
+    for (auto tc:static_cast<JobContext*>(job)->contexts){
+        delete tc;
+        tc = nullptr;
+    }
     delete static_cast<JobContext*>(job);
+    job = nullptr;
 }
 
 void abort(JobHandle job, const std::string& err){
@@ -97,7 +104,6 @@ uint64_t incStartCounter(ThreadContext* tc, stage_t stage){
 
 uint64_t incFinishCounter(ThreadContext* tc, stage_t stage){
     return tc->job->counters[stage].second.fetch_add(1);
-
 }
 
 int getStage(JobHandle job){
@@ -132,7 +138,13 @@ void emit2 (K2* key, V2* value, void* context){
 
 void emit3 (K3* key, V3* value, void* context){
     auto tc = static_cast<ThreadContext*>(context);
+    if (pthread_mutex_lock(&tc->job->wait_mutex)){
+        abort(tc->job, STD_ERR);
+    }
     tc->job->outputVec->emplace_back(key, value);
+    if (pthread_mutex_unlock(&tc->job->wait_mutex)){
+        abort(tc->job, STD_ERR);
+    }
 }
 
 void map(ThreadContext* tc){
