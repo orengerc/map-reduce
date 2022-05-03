@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug"/>
+				<Option working_dir="/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug"/>
+				<Option working_dir="/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug"/>
+				<Option working_dir="/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="OS_ex3_MapReduce">
-				<Option output="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/OS_ex3_MapReduce" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug"/>
+				<Option output="/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/OS_ex3_MapReduce" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 OS_ex3_MapReduce"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 OS_ex3_MapReduce"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="OS_ex3_MapReduce/fast">
-				<Option output="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/OS_ex3_MapReduce" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug"/>
+				<Option output="/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/OS_ex3_MapReduce" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,29 +75,29 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 OS_ex3_MapReduce/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 OS_ex3_MapReduce/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/Barrier.cpp">
+		<Unit filename="/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/Barrier.cpp">
 			<Option target="OS_ex3_MapReduce"/>
 		</Unit>
-		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/Barrier.h">
+		<Unit filename="/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/Barrier.h">
 			<Option target="OS_ex3_MapReduce"/>
 		</Unit>
-		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/MapReduceFramework.cpp">
+		<Unit filename="/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/MapReduceFramework.cpp">
 			<Option target="OS_ex3_MapReduce"/>
 		</Unit>
-		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/MapReduceFramework.h">
+		<Unit filename="/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/MapReduceFramework.h">
 			<Option target="OS_ex3_MapReduce"/>
 		</Unit>
-		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/SampleClient.cpp">
+		<Unit filename="/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/SampleClient.cpp">
 			<Option target="OS_ex3_MapReduce"/>
 		</Unit>
-		<Unit filename="/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/CMakeLists.txt">
+		<Unit filename="/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

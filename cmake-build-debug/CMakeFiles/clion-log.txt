@@ -1,4 +1,4 @@
-/usr/local/APP/jetbrains/clion/2021.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /cs/usr/oren_gerc/OS/OS-ex3-MapReduce
+/usr/local/APP/jetbrains/clion/2021.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce
 -- Configuring done
 -- Generating done
--- Build files have been written to: /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug
+-- Build files have been written to: /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug
