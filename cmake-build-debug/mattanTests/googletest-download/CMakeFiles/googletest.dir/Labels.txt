@@ -1,0 +1,14 @@
+# Target labels
+ googletest
+# Source files and their labels
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/mattanTests/googletest-download/CMakeFiles/googletest
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/mattanTests/googletest-download/CMakeFiles/googletest.rule
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/mattanTests/googletest-download/CMakeFiles/googletest-complete.rule
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/mattanTests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-build.rule
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/mattanTests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-configure.rule
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/mattanTests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-download.rule
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/mattanTests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-install.rule
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/mattanTests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-mkdir.rule
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/mattanTests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-patch.rule
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/mattanTests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-test.rule
+/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/mattanTests/googletest-download/googletest-prefix/src/googletest-stamp/googletest-update.rule

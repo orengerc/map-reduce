@@ -65,15 +65,29 @@ CMAKE_BINARY_DIR = /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/APP/jetbrains/clion/2021.2/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/APP/jetbrains/clion/2021.2/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-.PHONY : rebuild_cache/fast
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/APP/jetbrains/clion/2021.2/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/APP/jetbrains/clion/2021.2/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/APP/jetbrains/clion/2021.2/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -84,6 +98,37 @@ edit_cache:
 # Special rule for the target edit_cache
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/APP/jetbrains/clion/2021.2/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/APP/jetbrains/clion/2021.2/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/APP/jetbrains/clion/2021.2/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -117,24 +162,89 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named OS_ex3_MapReduce
+# Target rules for targets named MapReduceFramework
 
 # Build rule for target.
-OS_ex3_MapReduce: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 OS_ex3_MapReduce
-.PHONY : OS_ex3_MapReduce
+MapReduceFramework: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MapReduceFramework
+.PHONY : MapReduceFramework
 
 # fast build rule for target.
-OS_ex3_MapReduce/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/build
-.PHONY : OS_ex3_MapReduce/fast
+MapReduceFramework/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/build
+.PHONY : MapReduceFramework/fast
+
+#=============================================================================
+# Target rules for targets named mattanTester
+
+# Build rule for target.
+mattanTester: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mattanTester
+.PHONY : mattanTester
+
+# fast build rule for target.
+mattanTester/fast:
+	$(MAKE) $(MAKESILENT) -f mattanTests/CMakeFiles/mattanTester.dir/build.make mattanTests/CMakeFiles/mattanTester.dir/build
+.PHONY : mattanTester/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/build.make mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
 
 Barrier.o: Barrier.cpp.o
 .PHONY : Barrier.o
 
 # target to build an object file
 Barrier.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/Barrier.cpp.o
 .PHONY : Barrier.cpp.o
 
 Barrier.i: Barrier.cpp.i
@@ -142,7 +252,7 @@ Barrier.i: Barrier.cpp.i
 
 # target to preprocess a source file
 Barrier.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/Barrier.cpp.i
 .PHONY : Barrier.cpp.i
 
 Barrier.s: Barrier.cpp.s
@@ -150,7 +260,7 @@ Barrier.s: Barrier.cpp.s
 
 # target to generate assembly for a file
 Barrier.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/Barrier.cpp.s
 .PHONY : Barrier.cpp.s
 
 MapReduceFramework.o: MapReduceFramework.cpp.o
@@ -158,7 +268,7 @@ MapReduceFramework.o: MapReduceFramework.cpp.o
 
 # target to build an object file
 MapReduceFramework.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/MapReduceFramework.cpp.o
 .PHONY : MapReduceFramework.cpp.o
 
 MapReduceFramework.i: MapReduceFramework.cpp.i
@@ -166,7 +276,7 @@ MapReduceFramework.i: MapReduceFramework.cpp.i
 
 # target to preprocess a source file
 MapReduceFramework.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/MapReduceFramework.cpp.i
 .PHONY : MapReduceFramework.cpp.i
 
 MapReduceFramework.s: MapReduceFramework.cpp.s
@@ -174,56 +284,8 @@ MapReduceFramework.s: MapReduceFramework.cpp.s
 
 # target to generate assembly for a file
 MapReduceFramework.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/MapReduceFramework.cpp.s
 .PHONY : MapReduceFramework.cpp.s
-
-SampleClient.o: SampleClient.cpp.o
-.PHONY : SampleClient.o
-
-# target to build an object file
-SampleClient.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.o
-.PHONY : SampleClient.cpp.o
-
-SampleClient.i: SampleClient.cpp.i
-.PHONY : SampleClient.i
-
-# target to preprocess a source file
-SampleClient.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.i
-.PHONY : SampleClient.cpp.i
-
-SampleClient.s: SampleClient.cpp.s
-.PHONY : SampleClient.s
-
-# target to generate assembly for a file
-SampleClient.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.s
-.PHONY : SampleClient.cpp.s
-
-contexts.o: contexts.cpp.o
-.PHONY : contexts.o
-
-# target to build an object file
-contexts.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.o
-.PHONY : contexts.cpp.o
-
-contexts.i: contexts.cpp.i
-.PHONY : contexts.i
-
-# target to preprocess a source file
-contexts.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.i
-.PHONY : contexts.cpp.i
-
-contexts.s: contexts.cpp.s
-.PHONY : contexts.s
-
-# target to generate assembly for a file
-contexts.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.s
-.PHONY : contexts.cpp.s
 
 # Help Target
 help:
@@ -232,20 +294,23 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... OS_ex3_MapReduce"
+	@echo "... MapReduceFramework"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
+	@echo "... mattanTester"
 	@echo "... Barrier.o"
 	@echo "... Barrier.i"
 	@echo "... Barrier.s"
 	@echo "... MapReduceFramework.o"
 	@echo "... MapReduceFramework.i"
 	@echo "... MapReduceFramework.s"
-	@echo "... SampleClient.o"
-	@echo "... SampleClient.i"
-	@echo "... SampleClient.s"
-	@echo "... contexts.o"
-	@echo "... contexts.i"
-	@echo "... contexts.s"
 .PHONY : help
 
 

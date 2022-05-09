@@ -433,3 +433,31 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_70720/fast && /usr/bin/make  -f CMakeFiles/cmTC_70720.dir/build.make CMakeFiles/cmTC_70720.dir/build
+make[1]: Entering directory '/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_70720.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_70720.dir/CheckIncludeFile.c.o -c /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_70720
+/usr/local/APP/jetbrains/clion/2021.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70720.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_70720.dir/CheckIncludeFile.c.o -o cmTC_70720 
+make[1]: Leaving directory '/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_83a70/fast && /usr/bin/make  -f CMakeFiles/cmTC_83a70.dir/build.make CMakeFiles/cmTC_83a70.dir/build
+make[1]: Entering directory '/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_83a70.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_83a70.dir/CheckFunctionExists.c.o -c /usr/local/APP/jetbrains/clion/2021.2/bin/cmake/linux/share/cmake-3.20/Modules/CheckFunctionExists.c
+Linking C executable cmTC_83a70
+/usr/local/APP/jetbrains/clion/2021.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_83a70.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_83a70.dir/CheckFunctionExists.c.o -o cmTC_83a70  -lpthread 
+make[1]: Leaving directory '/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+

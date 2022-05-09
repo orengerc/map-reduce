@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cmake-build-debug/mattanTests/googletest-main" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mattanTests/cmake-build-debug/googletest-main" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mattanTests/mattanTests" vcs="Git" />
   </component>
 </project>
