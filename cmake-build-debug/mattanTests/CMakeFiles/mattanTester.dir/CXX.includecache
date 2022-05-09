@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../Barrier.h
-pthread.h
--
-
 ../MapReduceClient.h
 vector
 -
@@ -19,18 +15,6 @@ utility
 ../MapReduceFramework.h
 MapReduceClient.h
 ../MapReduceClient.h
-
-../contexts.h
-MapReduceFramework.h
-../MapReduceFramework.h
-Barrier.h
-../Barrier.h
-atomic
--
-unordered_map
--
-iostream
--
 
 /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/mattanTests/SampleClient.cpp
 MapReduceFramework.h
@@ -47,8 +31,6 @@ iostream
 -
 random
 -
-contexts.h
-/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/mattanTests/contexts.h
 gtest/gtest.h
 -
 

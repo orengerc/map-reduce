@@ -8,8 +8,6 @@
 #include <algorithm>
 #include <bitset>
 
-void calcNumElemInShuffle();
-
 void cleanup(JobHandle job){
     for (auto tc:static_cast<JobContext*>(job)->contexts){
         delete tc;
@@ -25,17 +23,16 @@ void abort(JobHandle job, const std::string& err){
     exit(EXIT_FAILURE);
 }
 
-uint64_t getBits(uint64_t n, uint64_t k, uint64_t p){
-    uint64_t a = (((1 << k) - 1) & (n >> (p - 1)));
-    return (((1 << k) - 1) & (n >> (p - 1)));
+void lock(JobHandle job, pthread_mutex_t* mutex){
+    if (pthread_mutex_lock(mutex)){
+        abort(job, THREAD_ERR);
+    }
 }
 
-uint64_t setMiddleBits(uint64_t n, uint64_t m){
-    return (n & 0xC00000007FFFFFFF) | (m << 31);
-}
-
-uint64_t setRightBits(uint64_t n, uint64_t m){
-    return (n & 0xFFFFFFFF80000000) | m;
+void unlock(JobHandle job, pthread_mutex_t* mutex){
+    if (pthread_mutex_unlock(mutex)){
+        abort(job, THREAD_ERR);
+    }
 }
 
 uint64_t incStartCounter(ThreadContext* tc, stage_t stage){
@@ -44,10 +41,6 @@ uint64_t incStartCounter(ThreadContext* tc, stage_t stage){
 
 uint64_t incFinishCounter(ThreadContext* tc, stage_t stage){
     return tc->job->counters[stage].second.fetch_add(1);
-}
-
-int getStage(JobHandle job){
-    return static_cast<int>(static_cast<JobContext*>(job)->curStage);
 }
 
 float getPercent(JobContext* job){
@@ -70,13 +63,9 @@ void emit2 (K2* key, V2* value, void* context){
 
 void emit3 (K3* key, V3* value, void* context){
     auto tc = static_cast<ThreadContext*>(context);
-    if (pthread_mutex_lock(&tc->job->wait_mutex)){
-        abort(tc->job, STD_ERR);
-    }
+    lock(tc->job, &tc->job->output_mutex);
     tc->job->outputVec->emplace_back(key, value);
-    if (pthread_mutex_unlock(&tc->job->wait_mutex)){
-        abort(tc->job, STD_ERR);
-    }
+    unlock(tc->job, &tc->job->output_mutex);
 }
 
 void map(ThreadContext* tc){
@@ -177,15 +166,15 @@ void* run(void* thread_context){
     if(!tc->threadID){
         calcNumElemInShuffle(tc);
 
-        pthread_mutex_lock(&tc->job->state_mutex);
+        lock(tc->job, &tc->job->state_mutex);
         tc->job->curStage.exchange(SHUFFLE_STAGE);
-        pthread_mutex_unlock(&tc->job->state_mutex);
+        unlock(tc->job, &tc->job->state_mutex);
 
         shuffle(tc);
 
-        pthread_mutex_lock(&tc->job->state_mutex);
+        lock(tc->job, &tc->job->state_mutex);
         tc->job->curStage.exchange(REDUCE_STAGE);
-        pthread_mutex_unlock(&tc->job->state_mutex);
+        unlock(tc->job, &tc->job->state_mutex);
     }
 
     //2nd barrier
@@ -194,7 +183,7 @@ void* run(void* thread_context){
     //reduce
     reduce(tc);
 
-    return (void*)1;
+    return nullptr;
 }
 
 void initCounters(JobContext* job) {
@@ -207,17 +196,19 @@ JobHandle startMapReduceJob(const MapReduceClient& client,
                             const InputVec& inputVec, OutputVec& outputVec,
                             int multiThreadLevel){
     //init job
-    auto job = new JobContext(&client, inputVec, &outputVec, multiThreadLevel);
+    auto job = new(std::nothrow) JobContext(&client, inputVec, &outputVec, multiThreadLevel);
     if(!job) abort(job, MEM_ERR);
 
     initCounters(job);
 
     //init threads
     for (int i = 0; i < job->nThreads; ++i) {
-        auto tc = new ThreadContext(i, &job->barrier, {}, job);
+        auto tc = new(std::nothrow) ThreadContext(i, &job->barrier, {}, job);
         if(!tc) abort(job, MEM_ERR);
         job->contexts.emplace_back(tc);
-        pthread_create(job->threads + i, nullptr, run, tc);
+        if(pthread_create(job->threads + i, nullptr, run, tc)){
+            abort(job, THREAD_ERR);
+        }
     }
 
     //return JobHandle
@@ -226,30 +217,26 @@ JobHandle startMapReduceJob(const MapReduceClient& client,
 
 void waitForJob(JobHandle job){
     auto handle = static_cast<JobContext*>(job);
-    if (pthread_mutex_lock(&handle->wait_mutex)){
-        abort(job, STD_ERR);
-    }
+    lock(job, &handle->wait_mutex);
     if(handle->finished){
-        if (pthread_mutex_unlock(&handle->wait_mutex)){
-            abort(job, STD_ERR);
-        }
+        unlock(job, &handle->wait_mutex);
         return;
     }
     for (int i = 0; i < handle->nThreads; ++i) {
-        pthread_join(handle->threads[i], nullptr);
+        if(pthread_join(handle->threads[i], nullptr)){
+            abort(job, THREAD_ERR);
+        }
     }
     handle->finished = true;
-    if (pthread_mutex_unlock(&handle->wait_mutex)){
-        abort(job, STD_ERR);
-    }
+    unlock(job, &handle->wait_mutex);
 }
 
 void getJobState(JobHandle job, JobState* state){
     auto* j = static_cast<JobContext*>(job);
-    pthread_mutex_lock(&j->state_mutex);
+    lock(job, &j->state_mutex);
     state->stage = static_cast<stage_t>(j->curStage);
     state->percentage=getPercent(j);
-    pthread_mutex_unlock(&j->state_mutex);
+    unlock(job, &j->state_mutex);
 }
 
 void closeJobHandle(JobHandle job){

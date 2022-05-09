@@ -6,7 +6,8 @@
 
 #define ERR "system error: "
 #define MEM_ERR "memory"
-#define STD_ERR "stdlib"
+#define STD_ERR "standard library"
+#define THREAD_ERR "pthread library"
 
 class ThreadContext;
 
@@ -25,6 +26,7 @@ public:
     std::unordered_map<stage_t, std::pair<std::atomic<uint64_t>, std::atomic<uint64_t>>> counters;
     Barrier barrier;
     pthread_mutex_t wait_mutex;
+    pthread_mutex_t output_mutex;
     pthread_mutex_t inc_mutex;
     pthread_mutex_t state_mutex;
 
@@ -32,7 +34,7 @@ public:
 
     JobContext(const MapReduceClient* client, InputVec inputVec, OutputVec* outputVec, int nThreads):
             client(client), inputVec(std::move(inputVec)), outputVec(outputVec), nThreads(nThreads), curStage(MAP_STAGE),
-            counters{0}, barrier(nThreads), wait_mutex(PTHREAD_MUTEX_INITIALIZER), inc_mutex(PTHREAD_MUTEX_INITIALIZER), state_mutex(PTHREAD_MUTEX_INITIALIZER) {
+            counters{0}, barrier(nThreads), wait_mutex(PTHREAD_MUTEX_INITIALIZER), output_mutex(PTHREAD_MUTEX_INITIALIZER), inc_mutex(PTHREAD_MUTEX_INITIALIZER), state_mutex(PTHREAD_MUTEX_INITIALIZER) {
         threads = new pthread_t[nThreads];
     }
 
