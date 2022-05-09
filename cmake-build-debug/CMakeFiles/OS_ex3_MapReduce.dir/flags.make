@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/_deps/googletest-src/googletest
+CXX_INCLUDES = 
 
-CXX_FLAGS = -g -std=gnu++11
+CXX_FLAGS =  -pthread -g -std=gnu++11
 

@@ -63,244 +63,42 @@ CMAKE_BINARY_DIR = /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/MapReduceFramework.dir/all
-all: mattanTests/all
+all: CMakeFiles/OS_ex3_MapReduce.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: mattanTests/preinstall
+preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/MapReduceFramework.dir/clean
-clean: mattanTests/clean
+clean: CMakeFiles/OS_ex3_MapReduce.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory mattanTests
-
-# Recursive "all" directory target.
-mattanTests/all: mattanTests/CMakeFiles/mattanTester.dir/all
-.PHONY : mattanTests/all
-
-# Recursive "preinstall" directory target.
-mattanTests/preinstall:
-.PHONY : mattanTests/preinstall
-
-# Recursive "clean" directory target.
-mattanTests/clean: mattanTests/CMakeFiles/mattanTester.dir/clean
-mattanTests/clean: mattanTests/googletest-build/clean
-.PHONY : mattanTests/clean
-
-#=============================================================================
-# Directory level rules for directory mattanTests/googletest-build
-
-# Recursive "all" directory target.
-mattanTests/googletest-build/all: mattanTests/googletest-build/googlemock/all
-.PHONY : mattanTests/googletest-build/all
-
-# Recursive "preinstall" directory target.
-mattanTests/googletest-build/preinstall: mattanTests/googletest-build/googlemock/preinstall
-.PHONY : mattanTests/googletest-build/preinstall
-
-# Recursive "clean" directory target.
-mattanTests/googletest-build/clean: mattanTests/googletest-build/googlemock/clean
-.PHONY : mattanTests/googletest-build/clean
-
-#=============================================================================
-# Directory level rules for directory mattanTests/googletest-build/googlemock
-
-# Recursive "all" directory target.
-mattanTests/googletest-build/googlemock/all: mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
-mattanTests/googletest-build/googlemock/all: mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/all
-mattanTests/googletest-build/googlemock/all: mattanTests/googletest-build/googletest/all
-.PHONY : mattanTests/googletest-build/googlemock/all
-
-# Recursive "preinstall" directory target.
-mattanTests/googletest-build/googlemock/preinstall: mattanTests/googletest-build/googletest/preinstall
-.PHONY : mattanTests/googletest-build/googlemock/preinstall
-
-# Recursive "clean" directory target.
-mattanTests/googletest-build/googlemock/clean: mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
-mattanTests/googletest-build/googlemock/clean: mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/clean
-mattanTests/googletest-build/googlemock/clean: mattanTests/googletest-build/googletest/clean
-.PHONY : mattanTests/googletest-build/googlemock/clean
-
-#=============================================================================
-# Directory level rules for directory mattanTests/googletest-build/googletest
-
-# Recursive "all" directory target.
-mattanTests/googletest-build/googletest/all: mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-mattanTests/googletest-build/googletest/all: mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/all
-.PHONY : mattanTests/googletest-build/googletest/all
-
-# Recursive "preinstall" directory target.
-mattanTests/googletest-build/googletest/preinstall:
-.PHONY : mattanTests/googletest-build/googletest/preinstall
-
-# Recursive "clean" directory target.
-mattanTests/googletest-build/googletest/clean: mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
-mattanTests/googletest-build/googletest/clean: mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/clean
-.PHONY : mattanTests/googletest-build/googletest/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/MapReduceFramework.dir
+# Target rules for target CMakeFiles/OS_ex3_MapReduce.dir
 
 # All Build rule for target.
-CMakeFiles/MapReduceFramework.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target MapReduceFramework"
-.PHONY : CMakeFiles/MapReduceFramework.dir/all
+CMakeFiles/OS_ex3_MapReduce.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target OS_ex3_MapReduce"
+.PHONY : CMakeFiles/OS_ex3_MapReduce.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/MapReduceFramework.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MapReduceFramework.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/MapReduceFramework.dir/rule
-
-# Convenience name for target.
-MapReduceFramework: CMakeFiles/MapReduceFramework.dir/rule
-.PHONY : MapReduceFramework
-
-# clean rule for target.
-CMakeFiles/MapReduceFramework.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MapReduceFramework.dir/build.make CMakeFiles/MapReduceFramework.dir/clean
-.PHONY : CMakeFiles/MapReduceFramework.dir/clean
-
-#=============================================================================
-# Target rules for target mattanTests/CMakeFiles/mattanTester.dir
-
-# All Build rule for target.
-mattanTests/CMakeFiles/mattanTester.dir/all: mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-mattanTests/CMakeFiles/mattanTester.dir/all: mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/all
-mattanTests/CMakeFiles/mattanTester.dir/all: CMakeFiles/MapReduceFramework.dir/all
-	$(MAKE) $(MAKESILENT) -f mattanTests/CMakeFiles/mattanTester.dir/build.make mattanTests/CMakeFiles/mattanTester.dir/depend
-	$(MAKE) $(MAKESILENT) -f mattanTests/CMakeFiles/mattanTester.dir/build.make mattanTests/CMakeFiles/mattanTester.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=12,13 "Built target mattanTester"
-.PHONY : mattanTests/CMakeFiles/mattanTester.dir/all
-
-# Build rule for subdir invocation for target.
-mattanTests/CMakeFiles/mattanTester.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mattanTests/CMakeFiles/mattanTester.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles 0
-.PHONY : mattanTests/CMakeFiles/mattanTester.dir/rule
-
-# Convenience name for target.
-mattanTester: mattanTests/CMakeFiles/mattanTester.dir/rule
-.PHONY : mattanTester
-
-# clean rule for target.
-mattanTests/CMakeFiles/mattanTester.dir/clean:
-	$(MAKE) $(MAKESILENT) -f mattanTests/CMakeFiles/mattanTester.dir/build.make mattanTests/CMakeFiles/mattanTester.dir/clean
-.PHONY : mattanTests/CMakeFiles/mattanTester.dir/clean
-
-#=============================================================================
-# Target rules for target mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir
-
-# All Build rule for target.
-mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/all
-mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/depend
-	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=6,7 "Built target gmock_main"
-.PHONY : mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
-
-# Build rule for subdir invocation for target.
-mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles 0
-.PHONY : mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
-
-# Convenience name for target.
-gmock_main: mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
-.PHONY : gmock_main
-
-# clean rule for target.
-mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
-.PHONY : mattanTests/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
-
-#=============================================================================
-# Target rules for target mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir
-
-# All Build rule for target.
-mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/all: mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/depend
-	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=4,5 "Built target gmock"
-.PHONY : mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/all
-
-# Build rule for subdir invocation for target.
-mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
+CMakeFiles/OS_ex3_MapReduce.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/OS_ex3_MapReduce.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles 0
-.PHONY : mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/rule
+.PHONY : CMakeFiles/OS_ex3_MapReduce.dir/rule
 
 # Convenience name for target.
-gmock: mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/rule
-.PHONY : gmock
+OS_ex3_MapReduce: CMakeFiles/OS_ex3_MapReduce.dir/rule
+.PHONY : OS_ex3_MapReduce
 
 # clean rule for target.
-mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/clean:
-	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/clean
-.PHONY : mattanTests/googletest-build/googlemock/CMakeFiles/gmock.dir/clean
-
-#=============================================================================
-# Target rules for target mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir
-
-# All Build rule for target.
-mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/all: mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/depend
-	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=10,11 "Built target gtest_main"
-.PHONY : mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-
-# Build rule for subdir invocation for target.
-mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles 0
-.PHONY : mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
-
-# Convenience name for target.
-gtest_main: mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
-.PHONY : gtest_main
-
-# clean rule for target.
-mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
-.PHONY : mattanTests/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
-
-#=============================================================================
-# Target rules for target mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir
-
-# All Build rule for target.
-mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/all:
-	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/build.make mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/depend
-	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/build.make mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=8,9 "Built target gtest"
-.PHONY : mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/all
-
-# Build rule for subdir invocation for target.
-mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles 0
-.PHONY : mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/rule
-
-# Convenience name for target.
-gtest: mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/rule
-.PHONY : gtest
-
-# clean rule for target.
-mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/clean:
-	$(MAKE) $(MAKESILENT) -f mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/build.make mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/clean
-.PHONY : mattanTests/googletest-build/googletest/CMakeFiles/gtest.dir/clean
+CMakeFiles/OS_ex3_MapReduce.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/clean
+.PHONY : CMakeFiles/OS_ex3_MapReduce.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

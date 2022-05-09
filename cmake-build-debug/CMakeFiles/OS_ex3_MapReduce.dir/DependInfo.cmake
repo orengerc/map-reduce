@@ -11,14 +11,11 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/Barrier.cpp" "/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.o"
   "/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/MapReduceFramework.cpp" "/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.o"
   "/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/SampleClient.cpp" "/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.o"
-  "/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/contexts.cpp" "/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "_deps/googletest-src/googletest/include"
-  "_deps/googletest-src/googletest"
   )
 
 # The set of dependency files which are needed:
@@ -27,8 +24,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
-  "/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/_deps/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -152,7 +152,6 @@ void reduce(ThreadContext* tc){
         incFinishCounter(tc, REDUCE_STAGE);
         old_value = incStartCounter(tc, REDUCE_STAGE);
     }
-    std::cout << "reduce finished\n";
 }
 
 void calcNumElemInShuffle(ThreadContext* tc) {
@@ -165,20 +164,14 @@ void calcNumElemInShuffle(ThreadContext* tc) {
 void* run(void* thread_context){
     auto* tc = (ThreadContext*) thread_context;
 
-    std::cout << "map started\n";
-
     //map
     map(tc);
-
-    std::cout << "sort started\n";
 
     //sort
     sort(tc);
 
     //1st barrier
     tc->barrier->barrier();
-
-    std::cout << "shuffle started\n";
 
     //shuffle
     if(!tc->threadID){
@@ -197,8 +190,6 @@ void* run(void* thread_context){
 
     //2nd barrier
     tc->barrier->barrier();
-
-    std::cout << "reduce started\n";
 
     //reduce
     reduce(tc);
@@ -245,7 +236,6 @@ void waitForJob(JobHandle job){
         return;
     }
     for (int i = 0; i < handle->nThreads; ++i) {
-        std::cout << "still waiting for threads to finish\n";
         pthread_join(handle->threads[i], nullptr);
     }
     handle->finished = true;
