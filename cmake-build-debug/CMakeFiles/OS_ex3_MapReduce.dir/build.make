@@ -53,10 +53,10 @@ RM = /usr/local/APP/jetbrains/clion/2021.2/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce
+CMAKE_SOURCE_DIR = /cs/usr/oren_gerc/OS/OS-ex3-MapReduce
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug
+CMAKE_BINARY_DIR = /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/OS_ex3_MapReduce.dir/depend.make
@@ -68,48 +68,62 @@ include CMakeFiles/OS_ex3_MapReduce.dir/flags.make
 
 CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.o: CMakeFiles/OS_ex3_MapReduce.dir/flags.make
 CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.o: ../MapReduceFramework.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.o -c /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/MapReduceFramework.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.o -c /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/MapReduceFramework.cpp
 
 CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/MapReduceFramework.cpp > CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/MapReduceFramework.cpp > CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.i
 
 CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/MapReduceFramework.cpp -o CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/MapReduceFramework.cpp -o CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.s
 
 CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.o: CMakeFiles/OS_ex3_MapReduce.dir/flags.make
 CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.o: ../SampleClient.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.o -c /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/SampleClient.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.o -c /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/SampleClient.cpp
 
 CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/SampleClient.cpp > CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/SampleClient.cpp > CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.i
 
 CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/SampleClient.cpp -o CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/SampleClient.cpp -o CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.s
 
 CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.o: CMakeFiles/OS_ex3_MapReduce.dir/flags.make
 CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.o: ../Barrier.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.o -c /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/Barrier.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.o -c /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/Barrier.cpp
 
 CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/Barrier.cpp > CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/Barrier.cpp > CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.i
 
 CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/Barrier.cpp -o CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/Barrier.cpp -o CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.s
+
+CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.o: CMakeFiles/OS_ex3_MapReduce.dir/flags.make
+CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.o: ../contexts.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.o -c /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/contexts.cpp
+
+CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/contexts.cpp > CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.i
+
+CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/contexts.cpp -o CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.s
 
 # Object files for target OS_ex3_MapReduce
 OS_ex3_MapReduce_OBJECTS = \
 "CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.o" \
 "CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.o" \
-"CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.o"
+"CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.o" \
+"CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.o"
 
 # External object files for target OS_ex3_MapReduce
 OS_ex3_MapReduce_EXTERNAL_OBJECTS =
@@ -117,9 +131,10 @@ OS_ex3_MapReduce_EXTERNAL_OBJECTS =
 OS_ex3_MapReduce: CMakeFiles/OS_ex3_MapReduce.dir/MapReduceFramework.cpp.o
 OS_ex3_MapReduce: CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.o
 OS_ex3_MapReduce: CMakeFiles/OS_ex3_MapReduce.dir/Barrier.cpp.o
+OS_ex3_MapReduce: CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.o
 OS_ex3_MapReduce: CMakeFiles/OS_ex3_MapReduce.dir/build.make
 OS_ex3_MapReduce: CMakeFiles/OS_ex3_MapReduce.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable OS_ex3_MapReduce"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable OS_ex3_MapReduce"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OS_ex3_MapReduce.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -131,6 +146,6 @@ CMakeFiles/OS_ex3_MapReduce.dir/clean:
 .PHONY : CMakeFiles/OS_ex3_MapReduce.dir/clean
 
 CMakeFiles/OS_ex3_MapReduce.dir/depend:
-	cd /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/OS_ex3_MapReduce.dir/DependInfo.cmake --color=$(COLOR)
+	cd /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cs/usr/oren_gerc/OS/OS-ex3-MapReduce /cs/usr/oren_gerc/OS/OS-ex3-MapReduce /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles/OS_ex3_MapReduce.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/OS_ex3_MapReduce.dir/depend
 

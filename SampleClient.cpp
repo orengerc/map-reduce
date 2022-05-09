@@ -80,7 +80,7 @@ int main(int argc, char** argv)
 	inputVec.push_back({nullptr, &s3});
 	JobState state;
     JobState last_state={UNDEFINED_STAGE,0};
-    auto* job = static_cast<JobContext *>(startMapReduceJob(client, inputVec, outputVec, 50));
+    auto job = startMapReduceJob(client, inputVec, outputVec, 4);
 	getJobState(job, &state);
 //	std::cout << state.stage << "\n" << state.percentage;
     

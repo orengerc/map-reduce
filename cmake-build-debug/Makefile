@@ -57,10 +57,10 @@ RM = /usr/local/APP/jetbrains/clion/2021.2/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce
+CMAKE_SOURCE_DIR = /cs/usr/oren_gerc/OS/OS-ex3-MapReduce
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug
+CMAKE_BINARY_DIR = /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/nitaiseri/Desktop/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cs/usr/oren_gerc/OS/OS-ex3-MapReduce/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -201,6 +201,30 @@ SampleClient.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/SampleClient.cpp.s
 .PHONY : SampleClient.cpp.s
 
+contexts.o: contexts.cpp.o
+.PHONY : contexts.o
+
+# target to build an object file
+contexts.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.o
+.PHONY : contexts.cpp.o
+
+contexts.i: contexts.cpp.i
+.PHONY : contexts.i
+
+# target to preprocess a source file
+contexts.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.i
+.PHONY : contexts.cpp.i
+
+contexts.s: contexts.cpp.s
+.PHONY : contexts.s
+
+# target to generate assembly for a file
+contexts.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/OS_ex3_MapReduce.dir/build.make CMakeFiles/OS_ex3_MapReduce.dir/contexts.cpp.s
+.PHONY : contexts.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -219,6 +243,9 @@ help:
 	@echo "... SampleClient.o"
 	@echo "... SampleClient.i"
 	@echo "... SampleClient.s"
+	@echo "... contexts.o"
+	@echo "... contexts.i"
+	@echo "... contexts.s"
 .PHONY : help
 
 
